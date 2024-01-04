@@ -1,0 +1,50 @@
+Staphylococcus aureus
+Pseudomonas aeruginosa
+Escherichia coli
+Staphylococcus epidermis
+Staphylococcus epidermidis
+Candida albicans
+Streptococcus mutans
+Enterococcus faecalis
+Bacillus subtilis
+Vibrio harveyi
+Haemophilus influenzae
+Vibrio cholerae
+Streptococcus epidermidis
+Streptococcus pneumoniae
+Salmonella enterica
+Burkholderia cenocepacia
+Burkholderia multivorans
+Serratia marcescens
+Human immunodeficiency virus 1
+Listeria monocytogenes
+Actinomyces oris
+Enteric bacteria and other eubacteria
+Stenotrophomonas maltophilia
+Streptococcus sanguinis
+Burkholderia pseudomallei
+Streptococcus sanguis
+Clostridium perfringens
+Cryptococcus neoformans
+Vibrio vulnificus
+Mycobacterium tuberculosis
+Plasmodium falciparum
+Klebsiella pneumoniae
+Propionibacterium acnes
+Vibrio anguillarum
+Acinetobacter baumannii
+Candida glabrata
+Pichia anomala
+Campylobacter jejuni
+Human immunodeficiency virus
+Micrococcus luteus
+Bacillus cereus
+Streptococcus pneumoniae serotype 4
+Klebsiella planticola
+Porphyromonas gingivalis
+Proteus mirabilis
+Candida tropicalis
+Aeromonas hydrophila
+Enterococcus faecium
+Vibrio campbellii
+Proteus vulgaris

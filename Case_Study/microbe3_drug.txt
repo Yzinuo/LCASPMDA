@@ -1,0 +1,50 @@
+Candida albicans
+Escherichia coli
+Staphylococcus aureus
+Pseudomonas aeruginosa
+Streptococcus mutans
+Pseudomonas japonica
+Bacillus cereus
+Pseudoalteromonas sp.
+Amycolatopsis orientalis
+Clostridium pasteurianum
+Enterobacter cancerogenus
+Staphylococcus epidermidis
+Enterococcus faecium
+Staphylococcus chromogenes
+Raoultella ornithinolytica
+Hepatitis B virus F
+Staphylococcus epidermis
+Neisseria gonorrhoeae
+Fusarium solani
+Bacillus anthracis
+Mycobacterium avium
+Human herpesvirus 1 
+Streptomyces rubiginosus
+Hepatitis B virus D
+Bacteroides fragilis
+Bacillus licheniformis
+Streptococcus sanguis
+Listeria monocytogenes serotype 4a
+Vibrio campbellii
+Bacteroides eggerthii
+Pantoea agglomerans
+Staphylococcus cohnii
+Achromobacter xylosoxidans
+Influenza A virus 
+Burkholderia pseudomallei
+Dihydropteroate synthase type-1
+Eggerthella lenta
+Proteus vulgaris
+Staphylococcus equorum
+Streptomyces sp. 
+Bacteroides uniformis
+Enterobacter cloacae
+Vibrio vulnificus
+Corynebacterium ammoniagenes
+Plasmodium falciparum
+Burkholderia thailandensis
+Hafnia alvei
+Sphingomonas sp. Ibu-2
+Vibrio cholerae
+Obesumbacterium proteus
