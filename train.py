@@ -18,7 +18,7 @@ from processdata import cross_5_folds, first_spilt_label, add_dti_info
 # Training settings
 parser = argparse.ArgumentParser(description='MDA-GRAPH')
 parser.add_argument('--seed', type=int, default=1, help='Random seed.')
-parser.add_argument('--epochs', type=int, default=100,  # 1000
+parser.add_argument('--epochs', type=int, default=2000,  # 1000
                     help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.0005,  #0.0005
                     help='Initial learning rate.')
