@@ -199,8 +199,13 @@ def cross_5_folds(adj, nodefeatures,dataset,drugfeat,microbefeat,seed=1):
     np.savez(path_data, drugfeat=drugfeat, microbefeat=microbefeat, adj=temp_adj, folds=folds1, nodefeat=nodefeatures)
 
 
-def feat_combine(dm,D,M,drugfeat,microbefeat,parent_dir):
-    nodefeatures = np.vstack((np.hstack((drugfeat, np.zeros([D,M]))),np.hstack((np.zeros([M,D]), microbefeat))))
+def feat_combine(dm,adj,D,M,drugfeat,microbefeat,parent_dir):
+    real_adj = adj
+    for i in real_adj:
+        i[1] -= D
+    adj_m = np.array(real_adj)
+    A = sp.csr_matrix((adj_m[:, 2], (adj_m[:, 0], adj_m[:, 1])), shape=(D, M)).toarray()
+    nodefeatures = np.vstack((np.hstack((drugfeat, A)),np.hstack((A.T, microbefeat))))
     path_nodefeatures = os.path.join(parent_dir,"nodefeatures.npy")
     np.save(path_nodefeatures, nodefeatures)
     return nodefeatures
@@ -253,7 +258,7 @@ def processdata_encoder(dataset, train_positive_inter_pos, pos_num ):
         construct train data for each 5-CV train set
         """
         dm = sc_data(adj,D,M,parent_dir,ds,ms)
-        nodefeatures = feat_combine(dm,D,M,drugfeat,microbefeat,parent_dir)
+        nodefeatures = feat_combine(dm,adj,D,M,drugfeat,microbefeat,parent_dir)
         # cross_5_folds(adj, nodefeatures,dataset,drugfeat,microbefeat,seed)
         cv_i += 1
 
