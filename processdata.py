@@ -93,8 +93,8 @@ def add_dti_info(microbe_num, drug_num, ori_dti_inter_mat, positive_sample_num, 
     Self-Paced Negative Sampling
     '''
     rate_n = rate
-    # alpha = np.tan(np.pi * 0.5 * (i_iter / (max(n_epochs - 1, 1))))
-    alpha = -np.log((n_epochs - 1 - i_iter) / (max(n_epochs - 1, 1)))
+    alpha = np.tan(np.pi * 0.5 * (i_iter / (max(n_epochs - 1, 1))))
+    # alpha = -np.log((n_epochs - 1 - i_iter) / (max(n_epochs - 1, 1)))
     indexes = np.arange(drug_num * microbe_num)
 
     # Get the desired & actual number of negtive samples
@@ -106,8 +106,8 @@ def add_dti_info(microbe_num, drug_num, ori_dti_inter_mat, positive_sample_num, 
 
     # Compute the hardness array
     # hardness = pred[index_mask]
-    # hardness = np.abs(pred[index_mask])
-    hardness = pred[index_mask] ** 2
+    hardness = np.abs(pred[index_mask])
+    # hardness = pred[index_mask] ** 2
     # index_n: absolute indexes of class C samples
     index_n = indexes[index_mask]
     k_bins = args.k_bins
