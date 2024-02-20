@@ -102,5 +102,5 @@ def  load_data(dataset, train_times):
     [dmd_edge_index, dmd_edge_weight, mdm_edge_index, mdm_edge_weight]: edges and weights in meta-path network
     """
 
-    return adj_similiarty, node_feature,  [pos_d, pos_m], \
+    return adj_similiarty, node_feature, [pos_d, pos_m], \
            [sn_edge_index, sn_edge_weight]

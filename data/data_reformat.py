@@ -4,15 +4,17 @@ from sklearn.model_selection import KFold
 import numpy as np
 import scipy.sparse as sp
 from utils import *
-import pandas as pd
+import pandas as pd,math
 
-def sc_data(adj,D,M,parent_dir,ds,ms):
+def sc_data(adj,D,M,parent_dir,ds,ms,parent_adj):
     """
     train data set adj
     """
-    real_adj = adj
+    real_adj = np.loadtxt(parent_adj)
+
     for i in real_adj:
-        i[1] -= D
+        i[1] -= 1
+        i[0] -= 1
 
     dm = np.array(adj)
     adj_m = np.array(real_adj)
@@ -210,13 +212,41 @@ def feat_combine(dm,adj,D,M,drugfeat,microbefeat,parent_dir):
     np.save(path_nodefeatures, nodefeatures)
     return nodefeatures
 
+def GIP_Calculate(M):     #计算高斯核相似性
+    l=np.size(M,axis=1)
+    sm=[]
+    m=np.zeros((l,l))
+    for i in range(l):
+        tmp=(np.linalg.norm(M[:,i]))**2
+        sm.append(tmp)
+    gama=l/np.sum(sm)
+    for i in range(l):
+        for j in range(l):
+            m[i,j]=np.exp(-gama*((np.linalg.norm(M[:,i]-M[:,j]))**2))
+    return m
+def GIP_Calculate1(M):     #计算高斯核相似性
+    l=np.size(M,axis=0)
+    sm=[]
+    m=np.zeros((l,l))
+    km=np.zeros((l,l))
+    for i in range(l):
+        tmp=(np.linalg.norm(M[i,:]))**2
+        sm.append(tmp)
+    gama=l/np.sum(sm)
+    for i in range(l):
+        for j in range(l):
+            m[i,j]=np.exp(-gama*((np.linalg.norm(M[i,:]-M[j,:]))**2))
+    for i in range(l):
+        for j in range(l):
+            km[i,j]=1/(1+np.exp(-15*m[i,j]+math.log(9999)))
+    return km
 
-def processdata_encoder(dataset, train_positive_inter_pos, pos_num ):
+def processdata_encoder(dataset, train_positive_inter_pos,val_positive_inter_pos, pos_num ):
     # seed = 1
     # random.seed(seed)
     cv_i = 0
     np.random.seed(1)
-    for pos_adj in train_positive_inter_pos:
+    for pos_adj, pos_adj_val in zip(train_positive_inter_pos, val_positive_inter_pos):
 
         pos_adj = np.array(pos_adj)
         adj = np.ones([len(pos_adj),3])
@@ -224,18 +254,40 @@ def processdata_encoder(dataset, train_positive_inter_pos, pos_num ):
         adj[:,1] = np.copy(pos_adj[:,1])
         pos_num = pos_num  # pos sample num for contrastive learning
         root_dir = os.path.join("./data", dataset)
+        parent_adj = os.path.join(root_dir, "adj.txt" )
         parent_dir = os.path.join(root_dir,'encoder_' + str(cv_i) )
         if not os.path.exists(parent_dir):
             os.mkdir(parent_dir)
-        path_ds = os.path.join(root_dir, "drugsimilarity.txt")
+        path_ds = os.path.join(root_dir, "drugsimilarity.txt") ###
         ds = np.loadtxt(path_ds)
-        path_ms = os.path.join(root_dir, "microbesimilarity.txt")
+        path_ms = os.path.join(root_dir, "microbesimilarity.txt")###
         ms = np.loadtxt(path_ms)
-
-
 
         D = len(ds)
         M = len(ms)
+
+        # drug_ids = set()
+        # microbe_ids = set()
+
+        # # 遍历 pos_adj_val 来填充集合
+        # for drug_id, microbe_id in pos_adj_val:
+        #     drug_ids.add(drug_id)
+        #     microbe_ids.add(microbe_id)
+        #
+        # # 假设 ds 和 ms 是 numpy 数组
+        # ds = np.array(ds)  # 药物互相关联矩阵
+        # ms = np.array(ms)  # 微生物互相关联矩阵
+        #
+        # # 将测试集中的所有药物在 ds 中的数值清零
+        # for drug_id in drug_ids:
+        #     ds[drug_id, :] = 0
+        #     ds[:, drug_id] = 0
+        #
+        # # 将测试集中的所有微生物在 ms 中的数值清零
+        # for microbe_id in microbe_ids:
+        #     ms[microbe_id, :] = 0
+        #     ms[:, microbe_id] = 0
+
 
         for i in adj:
             i[1] += D
@@ -257,8 +309,8 @@ def processdata_encoder(dataset, train_positive_inter_pos, pos_num ):
         """
         construct train data for each 5-CV train set
         """
-        dm = sc_data(adj,D,M,parent_dir,ds,ms)
-        nodefeatures = feat_combine(dm,adj,D,M,drugfeat,microbefeat,parent_dir)
+        dm = sc_data(adj,D,M,parent_dir,ds,ms,parent_adj)
+        # nodefeatures = feat_combine(dm,adj,D,M,drugfeat,microbefeat,parent_dir)
         # cross_5_folds(adj, nodefeatures,dataset,drugfeat,microbefeat,seed)
         cv_i += 1
 

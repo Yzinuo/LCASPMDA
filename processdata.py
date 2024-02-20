@@ -312,7 +312,7 @@ def first_spilt_label(inter, groups, seed, dataset,pos_num):
     only need to run once for each dataset
     """
 
-    processdata_encoder(dataset, train_positive_inter_pos, pos_num)
+    processdata_encoder(dataset, train_positive_inter_pos,val_positive_inter_pos,pos_num)
 
     """
     train_positive_inter_pos: pos pairs in each train set for 5-fold cv
