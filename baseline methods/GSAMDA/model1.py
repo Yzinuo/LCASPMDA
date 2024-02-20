@@ -36,7 +36,7 @@ def train33(Net,l):
     idx_test = range(1300, 1500)
     idx_train = torch.LongTensor(idx_train)
     idx_test = torch.LongTensor(idx_test)
-    model=LCAT(x.shape[1],128,True, 1, 'mean', 'lcat', 'v1')
+    model=GAT(x.shape[1],128,0.4,0.2,l)
     optimizer = optim.Adam(model.parameters(),
                            lr=0.01, weight_decay=5e-4)
     def train(epoch):
