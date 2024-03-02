@@ -1,50 +1,50 @@
-Staphylococcus aureus
 Pseudomonas aeruginosa
 Candida albicans
 Streptococcus mutans
 Escherichia coli
+Staphylococcus aureus
 Staphylococcus epidermidis
+Bacillus subtilis
+Staphylococcus epidermis
 Enterococcus faecalis
 Vibrio harveyi
-Bacillus subtilis
-Streptococcus pneumoniae
-Enteric bacteria and other eubacteria
-Human immunodeficiency virus 1
-Staphylococcus epidermis
 Salmonella enterica
-Streptococcus epidermidis
-Haemophilus influenzae
-Serratia marcescens
-Burkholderia multivorans
-Actinomyces oris
-Streptococcus sanguinis
 Streptococcus sanguis
-Listeria monocytogenes
-Stenotrophomonas maltophilia
-Burkholderia cenocepacia
-Burkholderia pseudomallei
-Burkholderia thailandensis
+Haemophilus influenzae
+Human immunodeficiency virus 1
 Clostridium perfringens
-Vibrio vulnificus
-Mycobacterium tuberculosis
-Streptococcus gordonii
-Plasmodium falciparum
-Vibrio cholerae
-Streptococcus pneumoniae serotype 4
-Candida glabrata
-Propionibacterium acnes
-Campylobacter jejuni
-Eikenella corrodens
-Bacillus cereus
-Klebsiella pneumoniae
-Enterococcus faecium
-Influenza A virus 
-Vibrio campbellii
+Enteric bacteria and other eubacteria
+Streptococcus pneumoniae
+Actinomyces oris
+Listeria monocytogenes
+Burkholderia cenocepacia
+Burkholderia multivorans
+Serratia marcescens
+Streptococcus epidermidis
+Burkholderia pseudomallei
 Acinetobacter baumannii
-Vibrio anguillarum
+Clostridium bacilli
+Halomonas pacifica
+Mycobacterium avium
+Francisella novicida
+Stenotrophomonas maltophilia
+Streptomyces sp. 
+Cronobacter sakazakii
+Hepatitis B virus D
+Clostridium leptum
+Eikenella corrodens
 Providencia stuartii
-Proteus mirabilis
+Staphylococcus caprae
+Streptococcus mitis
 Human immunodeficiency virus
-Cryptococcus neoformans
+Vibrio cholerae
+Aspergillus fumigatus
+Vibrio campbellii
+Propionibacterium acnes
+Clostridium pasteurianum
 Micrococcus luteus
-Candida tropicalis
+Bacillus licheniformis
+Vibrio vulnificus
+Pseudoalteromonas sp.
+Klebsiella pneumoniae
+Aeromonas hydrophila
