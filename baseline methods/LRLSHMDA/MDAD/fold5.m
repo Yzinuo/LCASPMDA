@@ -59,5 +59,9 @@ interaction1=A;
         F1(B2(i,1),B2(i,2))=F(B2(i,1),B2(i,2));    
     end
 end
-str=strcat('./predict result/Predict_result',num2str(num));
+str=strcat('./predict_result/Predict_result',num2str(num));
 save(str,'F1')
+str1=strcat('val_pos',num2str(num));
+save(str1,'B1')
+str2=strcat('val_neg',num2str(num));
+save(str2,'B2')

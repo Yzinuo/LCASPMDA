@@ -1,6 +1,6 @@
-for cv=1:10
+for cv=1:1
     LRLSHMDA5cv(1,1,0.5)
-    fold10(cv);
+    fold5(cv);
     overallauc(cv) = positiontooverallauc()
     overallaupr(cv) = pr_curve();
 end
