@@ -266,6 +266,16 @@ def processdata_encoder(dataset, train_positive_inter_pos,val_positive_inter_pos
         D = len(ds)
         M = len(ms)
 
+        adj_temp = np.array(adj)
+        adj_temp = sp.csr_matrix((adj_temp[:, 2], (adj_temp[:, 0], adj_temp[:, 1])), shape=(D, M)).toarray()
+        interaction = np.array(list(adj_temp))
+        Sm_r_GIP = GIP_Calculate(interaction)  # 微生物GIP相似性
+        Sr_m_GIP = GIP_Calculate1(interaction)  # 药物GIP相似性
+        path_drugfeat_GIP = os.path.join(parent_dir, "drug_GIP.txt")
+        path_microbefeat_GIP = os.path.join(parent_dir, "microbe_GIP.txt")
+        np.savetxt(path_drugfeat_GIP, Sm_r_GIP)
+        np.savetxt(path_microbefeat_GIP, Sr_m_GIP)
+
         # drug_ids = set()
         # microbe_ids = set()
 
