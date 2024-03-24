@@ -231,6 +231,8 @@ def first_spilt_label(inter, groups, seed, dataset,pos_num):
 
     np.random.seed(seed)
 
+    # 特定药物ID列表
+    specific_drug_ids = [598, 1105]
     """
     inter_folds: According to the groups division, divide inter into five group
     label_folds = the label of pairs in inter_folds; 1 for pod, 0 for neg
@@ -251,7 +253,7 @@ def first_spilt_label(inter, groups, seed, dataset,pos_num):
         fold_id = int(groups[i])
         inter_folds[fold_id].append([drug_node_id, microbe_node_id])
         label_folds[fold_id].append(inter_type)
-        if inter_type == 1:
+        if inter_type == 1 :
             #  positive sample
             pos_inter_folds[fold_id].append([drug_node_id, microbe_node_id])
             pos_label_folds[fold_id].append(inter_type)
@@ -275,21 +277,39 @@ def first_spilt_label(inter, groups, seed, dataset,pos_num):
     for i in range(5):
         val_fold_id = i
         for j in range(5):
+            # if j != val_fold_id:
+            #     # train_positive_inter_pos[i] += pos_inter_folds[j]
+            #     # train_negative_inter_pos[i] += neg_inter_folds[j]
+            #     train_positive_inter_pos[i] += [pair for pair in pos_inter_folds[j] if pair[0] not in specific_drug_ids]
+            #     train_negative_inter_pos[i] += [pair for pair in neg_inter_folds[j] if pair[0] not in specific_drug_ids]
+            #
+            #     train_interact_pos[i] += inter_folds[j]
+            #     train_label[i] += label_folds[j]
+            # else:
+            #     # val_positive_inter_pos[i] += pos_inter_folds[j]
+            #     # val_negative_inter_pos[i] += neg_inter_folds[j]
+            #     val_positive_inter_pos[i] += [pair for pair in pos_inter_folds[j] if pair[0] not in specific_drug_ids]
+            #     val_negative_inter_pos[i] += [pair for pair in neg_inter_folds[j] if pair[0] not in specific_drug_ids]
+            #
+            #     val_interact_pos[i] += inter_folds[j]
+            #     val_label[i] += label_folds[j]
             if j != val_fold_id:
-                train_positive_inter_pos[i] += pos_inter_folds[j]
-                train_negative_inter_pos[i] += neg_inter_folds[j]
+                train_positive_inter_pos[i] += [pair for pair in pos_inter_folds[j] if pair[0] not in specific_drug_ids]
+                train_negative_inter_pos[i] += [pair for pair in neg_inter_folds[j] if pair[0] not in specific_drug_ids]
 
-                train_interact_pos[i] += inter_folds[j]
-                train_label[i] += label_folds[j]
+                train_interact_pos[i] += [pair for pair in inter_folds[j] if pair[0] not in specific_drug_ids]
+                train_label[i] += [label for idx, label in enumerate(label_folds[j]) if
+                                   inter_folds[j][idx][0] not in specific_drug_ids]
             else:
-                val_positive_inter_pos[i] += pos_inter_folds[j]
-                val_negative_inter_pos[i] += neg_inter_folds[j]
+                val_positive_inter_pos[i] += [pair for pair in pos_inter_folds[j] if pair[0] not in specific_drug_ids]
+                val_negative_inter_pos[i] += [pair for pair in neg_inter_folds[j] if pair[0] not in specific_drug_ids]
 
-                val_interact_pos[i] += inter_folds[j]
-                val_label[i] += label_folds[j]
+                val_interact_pos[i] += [pair for pair in inter_folds[j] if pair[0] not in specific_drug_ids]
+                val_label[i] += [label for idx, label in enumerate(label_folds[j]) if inter_folds[j][idx][0] not in specific_drug_ids]
         """
             shuffle the data
         """
+
         train_interact_pos[i] = np.array(train_interact_pos[i])
         train_label[i] = np.array(train_label[i])
         shuffle_train = np.arange(0,len(train_interact_pos[i]))

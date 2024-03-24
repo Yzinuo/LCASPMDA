@@ -325,8 +325,8 @@ for train_times in range(fold_num):
 
     np.savetxt("./data/MDAD/Score/SCORE/score"+str(train_times)+".txt",output1)
     # np.savetxt("./data/MDAD/Score/PR/pr" + str(train_times) + ".txt", fold_aupr_score[train_times])
-    # fold_mcc_score[train_times] = round(mcc(predicts, targets), 4)
-    # fold_f1_score[train_times] = round(f1(predicts, targets), 4)
+    fold_mcc_score[train_times] = round(mcc(predicts, targets), 4)
+    fold_f1_score[train_times] = round(f1(predicts, targets), 4)
 
     if train_times == 0:
         all_labels = targets.cpu().detach()
@@ -339,7 +339,8 @@ for train_times in range(fold_num):
     print("acc socre:{} avg:{}".format(fold_acc_score,np.mean(fold_acc_score)))
     print("auc socre:{} avg:{}".format(fold_auc_score,np.mean(fold_auc_score)))
     print("aupr score:{} avg:{}".format(fold_aupr_score, np.mean(fold_aupr_score)))
-
+    print("f1 score:{} avg:{}".format(fold_f1_score, np.mean(fold_f1_score)))
+    print("mcc score:{} avg:{}".format(fold_mcc_score, np.mean(fold_mcc_score)))
 t2 = time.time()
 t_all = t2 - t1
 print("五折交叉时间：{}".format(t_all))

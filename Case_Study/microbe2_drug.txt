@@ -1,50 +1,50 @@
-Pseudomonas aeruginosa
 Staphylococcus aureus
-Streptococcus mutans
-Candida albicans
-Escherichia coli
 Staphylococcus epidermis
-Staphylococcus epidermidis
-Enterococcus faecalis
-Bacillus subtilis
 Vibrio harveyi
-Salmonella enterica
+Bacillus subtilis
+Staphylococcus epidermidis
+Burkholderia thailandensis
+Listeria monocytogenes
+Enterococcus faecalis
+Burkholderia pseudomallei
 Streptococcus pneumoniae
 Human immunodeficiency virus 1
-Actinomyces oris
-Haemophilus influenzae
-Streptococcus sanguis
-Burkholderia cenocepacia
 Clostridium perfringens
-Listeria monocytogenes
-Burkholderia pseudomallei
-Burkholderia multivorans
-Stenotrophomonas maltophilia
-Staphylococcus equorum
-Streptococcus sobrinus
 Enteric bacteria and other eubacteria
-Streptococcus pneumoniae serotype 4
-Acinetobacter baumannii
-Burkholderia cepacia
-Enterobacter cloacae
-Pseudomonas putida
-Streptococcus parasanguinis
-Yersinia enterocolitica
-Serratia marcescens
-Enterobacter ludwigi
-Dengue Virus Type 2
-Streptomyces gordonii
-Francisella novicida
-Vibrio cholerae
-Hafnia alvei
-Streptococcus epidermidis
-Gardnerella vaginalis
-Acinetobacter oleiovorans
+Pseudoalteromonas sp.
+Burkholderia cenocepacia
+Mycobacterium smegmatis
+Human immunodeficiency virus
+Micrococcus luteus
+Actinoplanes missouriensis
+Salmonella enterica
 Propionibacterium acnes
-Staphylococcus haemolyticus
+Baker's yeast
+Salmonella Typhi
+Plasmodium falciparum
+Pseudomonas aeruginosa
+Thermus thermophilus
+Cryptococcus neoformans
+Candida spp.
+Enterobacter cloacae
+Pseudomonas fluorescens
 Eubacterium ramulus
-Aspergillus niger
-Varicella-zoster virus
-Clostridium leptum
-Klebsiella planticola
-Sphingomonas sp. Ibu-2
+Haemophilus influenzae
+Aggregatibacter actinomycetemcomitans
+Streptococcus epidermidis
+Hafnia alvei
+Stenotrophomonas maltophilia
+Coagulase- negative staphylococci
+Pseudomonas putida
+Mycobacterium tuberculosis
+Burkholderia multivorans
+Listeria monocytogenes serotype 4a
+Geobacillus kaustophilus
+Trichophyton mentagrophytes
+Vibrio cholerae
+Campylobacter jejuni
+Eggerthella lenta
+Schistosoma
+Enterococcus faecium
+Streptococcus pneumoniae serotype 4
+Serratia liquefaciens
